@@ -1,0 +1,819 @@
+/* ----------------------------- *\
+encuentra-tu-plan.css 
+- Reset / Normalizador      (mismo que el index.css)
+- Variables (root)          (mismo que el index.css)
+- Header                    (mismo que el index.css)
+- Main
+- Footer                    (mismo que el index.css)
+- Responsive                (mismo que el index.css)
+\* ----------------------------- */
+/* ----------------------------- *\
+
+
+/* -------------------- Reset -------------------- */
+
+:root {
+    /* Anclas suaves */
+  scroll-behavior : smooth;
+  }
+  /* Reseteamos los margin, paddings y bordes de todas las etiquetas */
+  * , *::before , *::after {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    box-sizing : border-box;
+    vertical-align : baseline;
+  }
+  /* Quitamos los puntos de los <li> */
+  li , menu, summary {
+    list-style-type : none;
+  }
+
+ /* Quitamos los subrayados de los enlaces */
+  a {
+    text-decoration : none;
+    color : inherit;
+  }
+  ol {
+    counter-reset : revert;
+  }
+
+  /* Nivelamos problemas de tipografías y colocación de formularios */
+  form , input , textarea , select , button , label {
+    background-color : transparent;
+    display : block;
+  }
+  fieldset {
+    border : none;
+  }
+  button , label {
+    cursor : pointer;
+    font-family: poppins, sans-serif;
+  }
+  /* Configuramos la tipografía para toda la web */
+  body {
+    min-height : 100vh;
+    font-family: poppins, sans-serif;
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+  }
+  html, body {
+  width: 100%;
+  overflow-x: hidden; /* evita desplazamiento lateral */
+}
+ /* Configuramos la barra de scroll */
+ body{
+    overflow-y: auto; 
+    scroll-behavior: smooth;
+  }
+    ::-webkit-scrollbar {
+        width: 0.625rem;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary);
+        border-radius: .3125rem;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-primary);
+    }
+
+  
+
+/* -------------------- Reset -------------------- */
+
+
+
+
+/* -------------------- Variables -------------------- */
+:root{
+    /* Colores */
+    --color-primary: hsl(7, 98%, 66%);      /* Color predominante de la web */
+
+    /* Margenes */
+    --margin-primary: 2.5rem;                /* Margin primario de toda la web */
+    --margin-primary-resp: 1.25rem 2.5rem;   /* Margin primario de toda la web en responsive */
+
+    /* Estilos de bordes */
+    --border-radius: 1.5625rem;               /* Bordes redondeados de toda la web */
+    --border-radius-small: .9375rem;          /* Bordes redondeados conradios 
+    pequeños de toda la web */
+    --border-weight: .125rem;                 /* Grosor de los bordes de toda la web */
+
+    /* Tamaños de textos */
+    --tittle-font-size: 3.125rem;              /* tamaño de los títulos */
+    --tittle-font-size-resp: 2.5rem;           /* tamaño de los títulos en responsive */
+    --header-font-size: 1.25rem;               /* tamaño del texto del header */
+    --header-font-size-resp: 1rem;             /* tamaño del texto del header en responsive */
+    --body-font-size: 1rem;                    /* tamaño del texto del body */
+    --body-font-size-small: .875rem;           /* tamaño del texto del body ás pequeño */
+    --body-font-size-resp: .75rem;             /* tamaño del texto del body en responsive */
+    --body-font-size-small-resp: .625rem;     /* tamaño del texto del body más pequeño en responsive */
+    --button-font-size: 1.125rem;              /* tamaño del texto de los botones */
+    --button-font-size-resp: 0.875rem;         /* tamaño del texto de los botones en responsive */
+    --h2-font-size: 2.5rem;                    /* tamaño del texto de los h2 */
+    --h2-font-size-resp: 1.875rem;             /* tamaño del texto de los h2 en responsive */
+    --h3-font-size: 1.875rem;                  /* tamaño del texto de los h3 */
+    --h3-font-size-resp: 1.5625rem;           /* tamaño del texto de los h3 en responsive */
+    --footer-font-size: .75rem;                /* tamaño del texto del footer */
+    --footer-font-size-resp: .625rem;          /* tamaño del texto del footer en responsive */
+
+    /* Interlineado e interletrado */
+    --tittle-letter-spacing: -0.15rem;        /* interletrado de los títulos */
+    --tittle-letter-spacing-resp: -0.0625rem; /* interletrado de los títulos e responsive */
+    --tittle-line-height: 1;                  /* interlineado de los títulos */
+    --body-line-height: 1.4;                  /* interlineado del body */
+  
+
+}
+/* -------------------- Variables -------------------- */
+
+
+
+
+/* -------------------- Header -------------------- */
+/* Descripción: estilos para el encabezado
+    Estructura:
+        - Header-top
+            - Header-logo
+            - Header-button: botón menu responsive
+        - Header-nav: menú de navegación
+        - Header-ul: lista de enlaces
+        - Header-li: enlaces
+        
+*/
+.Header {
+    width: 100%;
+    min-height: 10vh;
+  
+    padding: var(--margin-primary);
+    margin: auto;
+
+    background-color: white;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;    
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;      /* Para que siempre quede por encima del resto */
+
+    font-size: var(--header-font-size);
+}
+.Header-top{}
+.Header-logo {
+    max-width: 12.5rem;
+    word-wrap: break-word;          /* Para que el logo quede en dos lineas */
+
+    letter-spacing: var(--tittle-letter-spacing);
+    line-height: var(--tittle-line-height);
+    font-size: var(--tittle-font-size);
+}
+.Header-button {
+    display: none;
+}
+.Header-nav {
+}
+.Header-ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.Header-li {
+}
+.Header-li:hover {
+    color: var(--color-primary);
+    font-weight: 700;
+    transition: all .5s ease ; 
+}
+.Header-li:active {
+    color: var(--color-primary);
+    font-weight: 700;
+    transition: all .5s ease ; 
+}
+/* -------------------- Header -------------------- */
+
+
+
+/* -------------------- Main -------------------- */
+/* Descripción: estilos para el contenido de "Encuentra tu plan" de la web
+    Estructura:
+    - Main
+        - Main-tittle
+        - Main-cards
+    
+*/
+.Main {
+    padding-top: 20vh;
+    min-height:auto;
+}
+
+/* --- Titulo --- */
+/* Descripción: estilos para el contenido de "Encuentra tu plan" de la web
+    Estructura:
+        - Main-tittle
+            - Main-tittle-h2
+            - Main-tittle-p
+*/
+
+.Main-tittle {
+    width: 100%;
+    padding: var(--margin-primary);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5625rem;
+
+    text-align: center;
+}
+.Main-tittle-h2 {
+    text-align: center;
+    letter-spacing: var(--tittle-letter-spacing);
+    line-height: var(--tittle-line-height);
+    font-size: var(--h2-font-size);
+}
+.Main-tittle-p {
+    font-size: var(--header-font-size);
+}
+
+/* --- Titulo --- */
+
+
+/* --- Grid --- */
+/* Descripción: estilos para el grid de "Encuentra tu plan" de la web
+    Estructura:
+        - Main-grid
+            - Main-cards
+                - Main-grid
+                    - Main-card
+                        - Main-card-front
+                            - Main-tittle-h3
+                        - Main-card-back
+                            - Main-card-p
+
+*/
+.Main-cards {
+    width: 100%;
+    padding: var(--margin-primary);
+}
+
+.Main-grid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+  
+.Main-card {
+    width: 100%;
+    min-height: 37.5rem;
+
+    margin-bottom: 5rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5625rem;
+
+    cursor: pointer;
+    perspective: 1000px; 
+    position: relative;
+
+    opacity: 0.1;
+    translate:0 6.25rem ;
+    transition: all .5s ease;
+}
+.Main-card.isVisible{
+    opacity: 1;
+    translate:0;
+}
+.Main-card-inner {
+    width: 100%;
+    min-height: 100%;
+
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    position: relative;
+}
+  
+.Main-card.flipped .Main-card-inner {
+    transform: rotateY(180deg);
+}
+
+.Main-card-front,
+.Main-card-back {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    top: 0;
+    left: 0;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.Main-card-front {
+    background-color: var(--color-primary);
+    border: solid .25rem white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.Main-card-img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: var(--border-radius-small);
+    object-fit: cover;
+    display: block;
+}
+
+.Main-card-back {
+    padding: 1.25rem;
+
+    border: solid .25rem var(--color-primary);
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+    transform: rotateY(180deg);
+}
+
+.Main-tittle-h3 {
+    font-size: var(--h3-font-size);
+    text-align: center;
+}
+  
+.Main-card-text {
+}
+.Main-card-li{}
+.Main-span-strong{
+    font-weight: 600;
+}
+.Main-card-p{
+    font-size: var(--body-font-size-small);
+    font-style: italic ;
+    text-align: center;
+}
+.Main-card-button{
+    width: 50%;
+    padding: .625rem 1rem;
+
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-primary);
+    color: white;
+    font-size: var(--button-font-size);
+    text-align: center;
+}
+.Main-card-button:hover{
+    background-color: black;
+    color: white;
+    transition: all .5s ease ; 
+}
+
+/* --- Grid --- */
+
+/* --- Acordeon - FAQ --- */
+/* Descripción: estilos para el acordeon con preguntas freceuntes de la web
+    Estructura:
+        - Main-FAQ
+            - Main-intro
+                - Main-tittle-h2
+                - Main-tittle-p
+            - Main-acordeon
+                - Main-bloque
+                    - Main-pregunta
+                    - Main-respuesta
+*/
+.Main-FAQ {
+    width: 100%;
+    padding: var(--margin-primary);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    gap: 1.5625rem;
+}
+.Main-intro {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    gap: 1.5625rem;
+
+}
+.Main-tittle-h2--FAQ {
+    text-align: start;
+    letter-spacing: var(--tittle-letter-spacing);
+    line-height: var(--tittle-line-height);
+    font-size: var(--h2-font-size);
+
+    opacity: 0.1;
+    translate:0 6.25rem ;
+    transition: all .5s ease;
+}
+.Main-tittle-h2--FAQ.isVisible{
+    opacity: 1;
+    translate:0;
+}
+.Main-tittle-p--FAQ {
+    opacity: 0.1;
+    translate:0 6.25rem ;
+    transition: all .5s ease;
+}
+.Main-tittle-p--FAQ.isVisible{
+    opacity: 1;
+    translate:0;
+}
+.Main-acordeon {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    gap: 1.25rem
+}
+.Main-bloque {
+    width: 100%;
+    padding: 1rem 0;
+
+    border-bottom: var(--border-weight) solid var(--color-primary);
+    opacity: 0.1;
+    translate:0 6.25rem;
+    transition: all .5s ease;
+}
+.Main-bloque.isVisible{
+    opacity: 1;
+    translate:0;
+}
+
+.Main-pregunta {
+    position: relative;
+}
+.Main-pregunta::after {
+    content: '↓';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+.Main-respuesta {
+    max-height: 0;
+
+    padding-top: 0;
+
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+}
+.activo .Main-respuesta {
+    max-height: 31.25rem; 
+    padding-top: 1rem;
+}
+.activo .Main-pregunta::after {
+    transform: rotate(180deg);
+}
+
+/* --- Acordeon - FAQ --- */
+
+
+/* -------------------- Main -------------------- */
+
+
+/* -------------------- Footer -------------------- */
+/* Descripción: estilos para el pie de pagina
+    Estructura:
+        - Footer
+            - Footer-logo
+            - Footer-subscription
+                - Footer-subscription-title
+                - Footer-form
+                    - Footer-form-label
+                    - Footer-form-input
+                    - Footer-form-button
+            - Footer-legal
+                - Footer-ul
+                    - Footer-li
+            - Footer-RRSS
+                - bi: iconos de redes sociales
+            - Footer-copy: copyright
+*/
+
+.Footer {
+    width: 100%;
+
+    padding: var(--margin-primary);
+
+    background-color: var(--color-primary);
+    color: white;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.Footer-column-left {
+    width: calc( 100% / 2 );
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5625rem;
+}
+.Footer-logo {
+    line-height: var(--tittle-line-height);
+    font-size: var(--tittle-font-size-resp);
+}
+.Footer-subscription {
+}
+.Footer-form {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: .625rem;
+}
+.Footer-form-label {
+}
+.Footer-form-input {
+    width: 80%;
+    
+    padding: .75rem 1rem;
+
+    font-size: var(--footer-font-size);
+
+    border-radius: var(--border-radius-small);
+    border: solid white var(--border-weight);  
+}
+.Footer-form-button {
+
+    padding: .625rem 1rem;
+
+    border-radius: var(--border-radius-small);
+    background-color: white;
+    color: black;
+}
+.Footer-form-button:hover{
+    background-color: black;
+    color: white;
+    transition: all .5s ease ; 
+}
+.Footer-form-button:active{
+    background-color: black;
+    color: white;
+    transition: all .5s ease ; 
+}
+.Footer-column-right {
+    width: calc( 100% / 2 );
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5625rem;
+
+}
+.Footer-RRSS {
+}
+.bi {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.bi-instagram {
+}
+.bi-facebook {
+}
+.bi-twitter-x {
+}
+.bi-youtube {
+}
+.Footer-legal {
+    font-size: var(--footer-font-size);
+}
+.Footer-ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.Footer-li {
+}
+.Footer-copy {
+    text-align: end;
+}
+
+/* -------------------- Footer -------------------- */
+
+
+
+
+
+
+/* -------------------- Responsive --------------------  */
+/* Descripción: responsive de toda la web para que se pueda visualizar en dispositivos distintos
+    Estructura: misma estructura tanto para tablets como para teléfonos
+        - Header
+            - Header-top
+                - Header-h1: logo
+                - Header-button: botón menu responsive
+            - Header-nav: menú de navegación
+            - Header-ul: lista de enlaces
+            - Header-li: enlaces
+        - Main
+            - Main-tittle
+            - Main-cards
+            -
+        - Footer
+*/
+
+/* ------- Para tablets ------- */
+@media (max-width: 1024px) {
+    /* --- Header --- */
+    .Header {
+        width: 100%;
+        padding-bottom: .625rem;
+        /* color: white; */
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: start; 
+        gap: 1.5625rem;
+
+        transform: translateY(-20px); 
+    }
+    .Header--active{
+        background-color: var(--color-primary);
+
+        transform: translateY(0px); 
+        transition: all .5s ease ;
+    }
+    .Header-top{
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .Header-button {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .Header-nav {
+        width: 100%;
+    }
+    .Header-ul {
+        height: 0;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+
+        transform: translateY(-20px); 
+        overflow: hidden;
+        transition: all .5s ease ; 
+    }
+    .Header-li{
+        width: 100%;
+        padding: 0 0 .625rem 0 ;
+        border-bottom: solid black .0938rem;
+    }
+    .Header-li:hover {
+        color: white;
+        font-weight: 700;
+        transition: all .5s ease ; 
+    }
+    .Header-li:active {
+        color: white;
+        font-weight: 700;
+        transition: all .5s ease ; 
+    }
+    .Header-ul.isVisible{
+        height: auto;
+        transform: translateY(0px); 
+        transition: all .5s ease ; 
+    }
+    /* --- Header --- */
+
+
+    /* --- Main --- */
+    .Main-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* --- Main --- */
+
+
+    /* --- Footer --- */
+    .Footer {
+        padding: var(--margin-primary-resp);
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: start; 
+        gap: 1.5625rem;
+    }
+    .Footer-column-left{
+        width: 100%;
+    }
+    .Footer-column-right{
+        width: 100%;
+    }
+}
+
+
+
+/* ------- Para teléfonos ------- */
+@media (max-width: 767px) {
+    /* --- Header --- */
+    .Header-h1{
+        font-size: var(--tittle-font-size-resp);
+    }
+    .Header-nav {
+        font-size: var(--header-font-size-resp);
+    }
+    .Header-li{
+        padding: 0 0 .375rem 0 ;
+        
+    }
+    /* --- Header --- */
+
+    /* --- Main --- */
+  
+    .Main-tittle-h2 {
+        font-size: var(--h2-font-size-resp);
+        letter-spacing: var(--tittle-letter-spacing-resp);
+    }
+    .Main-tittle-p {
+        font-size: var(--header-font-size-resp);
+    }
+    .Main-cards {
+        padding: var(--margin-primary-resp);
+    }
+    .Main-grid {
+        grid-template-columns: 1fr;
+    }
+    .Main-tittle-h3 {
+        font-size: var(--h3-font-size-resp); ;
+    }
+    .Main-card-text {
+        font-size: var(--body-font-size-resp);
+    }
+    .Main-card-p {
+        font-size: var(--body-font-size-small-resp);
+    }
+    .Main-FAQ{
+        padding: var(--margin-primary-resp);
+    }
+    .Main-bloque{
+        font-size: var(--body-font-size-small);
+    }
+    /* --- Main --- */
+
+    /* --- Footer --- */
+    .Footer-logo {
+        font-size: 2.1875rem;
+    }
+    .Footer-form-label {
+        font-size: var(--body-font-size-resp);
+    }
+    .Footer-form-button {
+        font-size: var(--footer-font-size);
+    }
+    .bi {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+    .Footer-ul--legal {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: end;
+        gap: .3125rem;
+    }
+}
+
+/* -------------------- Responsive --------------------  */

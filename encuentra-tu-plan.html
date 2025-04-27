@@ -1,0 +1,439 @@
+<!-- 
+ Descripción: Este archivo HTML contiene la pag. "Encuentra tu plan" donde están todos los planes disponibles
+ Estructura general:
+    - Header / encabezado, con el logo y menu de navegación
+    - Contenido principal
+        - Titulo introductorio
+        - Grid con todas las tarjetas de los planes
+            - Tarjeta del plan (6)
+                - Imagen descriptiva del plan (optimizada)
+                - Titulo del tipo de plan
+                - Texto descriptivo del tipo de plan
+    - Footer / pie de página
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentra tu plan</title>
+    <link rel="stylesheet" href="css/encuentra-tu-plan.css">
+    <script src="js/encuentra-tu-plan.js" defer></script>
+
+     <!-- Tipografías -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Logo en el navegador -->
+    <link rel="icon" href="assets/logo/Logo.png" type="image/png">
+     
+</head>
+<body>
+
+
+<!-- Encabezado principal -->
+<header class="Header">
+
+    <div class="Header-top"> <!-- Para que quede en la misma linea -->
+        <!-- Logo de la pag. web -->
+        <h1 class="Header-logo">
+            <a href="index.html" title="Plan-on-Time">Plan on time</a>
+        </h1>
+
+        <!-- Botón responsive para desplegar el menu de navegación -->
+        <button class="Header-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-down-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 13.5a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1H3.707L13.854 2.854a.5.5 0 0 0-.708-.708L3 12.293V7.5a.5.5 0 0 0-1 0z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Menu de navegación principal-->
+    <nav class="Header-nav">
+        <ul class="Header-ul">            
+            <li class="Header-li">
+                <!-- Ancla para que haga scroll en la propia pag -->
+                <a href="index.html" title="Como-funciona">Cómo funciona</a>
+            </li> 
+            <li class="Header-li">
+                <a href="encuentra-tu-plan.html" title="Encuentra-tu-plan" target="_blank" rel="noopener noreferrer">Encuentra tu plan</a>
+            </li>  
+            <li class="Header-li">
+                <a href="#FAQ" title="FAQ" target="_blank" rel="noopener noreferrer">FAQ</a>
+            </li> 
+            <li class="Header-li"> 
+                <!-- Ancla para que haga scroll en la propia pag -->
+                <a href="index.html" title="Testimonios">Testimonios</a>
+            </li>         
+            <li class="Header-li"> 
+                <a href="contacto.html" title="Contacto" target="_blank" rel="noopener noreferrer">Contacto</a>
+            </li> 
+            <li class="Header-li"> 
+                <!-- Todavia no hay pag. de compra -->
+                <a href="compra.html" title="Compra" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                    </svg>
+                </a>
+            </li>                
+        </ul>
+    </nav>
+
+</header>
+
+<!-- Contenido principal -->
+<main class="Main">
+
+    <!-- Titulo introductorio -->
+    <section class="Main-tittle">
+        <h2 class="Main-tittle-h2">¿Cómo te sientes hoy?</h2>
+        <p class="Main-tittle-p">Elige con quién te sientes identificado y descubre tu plan</p>
+    </section>
+
+    <!-- Grid con todas las tarjetas de los planes -->
+    <div class="Main-cards">
+        <!-- Lista de cartas -->
+        <ul class="Main-grid">
+
+            <li class="Main-card observe">
+                <!-- Para que haga el efecto de girar -->
+                <div class="Main-card-inner">
+                    <!-- Carta por delante -->
+                    <div class="Main-card-front">
+                        <!-- Imagen descriptiva del plan (optimizada) -->
+                        <picture>
+                            <source srcset="assets/cartas/finales/Nadal.webp" type="image/webp">    
+                            <source srcset="assets/cartas/finales/Nadal.jpg" type="image/jpg">
+                            <img class="Main-card-img" src="assets/cartas/finales/Nadal.png" alt="Deporte">
+                        </picture>                 
+                    </div>
+
+                    <!-- Carta por detrás -->
+                    <div class="Main-card-back">
+                        <!-- Titulo del tipo de plan -->
+                        <h3 class="Main-tittle-h3">Clase de surf indoor</h3> 
+
+                        <!-- Lista del texto descriptivo del tipo de plan -->
+                        <ul class="Main-card-text">
+                            <li class="Main-card-li"><span class="Main-span-strong">Duración:</span> 1h (pero te vas con agujetas pa’ tres días)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Precio:</span> 25-35€</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Personas:</span> ideal 1-3 (más, y hay pelea por la tabla como en Gran Hermano)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Nivel físico:</span> no hace falta ser Thor, pero ayuda tener equilibrio</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Extra:</span> instructor guapo/a incluido (no garantizado, sorry)</li>
+                        </ul>
+
+                        <p class="Main-card-p">El único sitio donde puedes caerte 20 veces y seguir sintiéndote cool. Casi como en la vida, pero con neopreno.</p>
+                    </div>
+                </div>
+
+                <!-- Botón para seleccionar el plan -->
+                <!-- Hrfe de compra ficticio porque no esta creada la pag. de compra -->
+                <a class="Main-card-button" href="compra.html" title="lo-quiero" target="_blank" rel="noopener noreferrer">¡Lo quiero!</a>
+            </li>
+
+            <li class="Main-card observe">
+                <!-- Para que haga el efecto de girar -->
+                <div class="Main-card-inner">
+                    <!-- Carta por delante -->
+                    <div class="Main-card-front">
+                        <!-- Imagen descriptiva del plan (optimizada) -->
+                        <picture>
+                            <source srcset="assets/cartas/finales/Cervantes.webp" type="image/webp">    
+                            <source srcset="assets/cartas/finales/Cervantes.jpg" type="image/jpg">
+                            <img class="Main-card-img" src="assets/cartas/finales/Cervantes.png" alt="Cultura">
+                        </picture>                 
+                    </div>
+
+                    <!-- Carta por detrás -->
+                    <div class="Main-card-back">
+                        <!-- Titulo del tipo de plan -->
+                        <h3 class="Main-tittle-h3">Tour teatralizado por el Madrid de los Austrias</h3> 
+
+                        <!-- Lista del texto descriptivo del tipo de plan -->
+                        <ul class="Main-card-text">
+                            <li class="Main-card-li"><span class="Main-span-strong">Duración:</span> 2h</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Precio:</span> desde 12€ (gratis si haces la risa floja)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Personas:</span> desde 1 (sí, también puedes culturizarte sol@, filósofo)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Nivel de intensidad:</span> como leer el BOE con una copa de vino</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Extras:</span> actores vestidos de época, aunque no esperes ver a Brad Pitt haciendo de Felipe II</li>
+                        </ul>
+
+                        <p class="Main-card-p">¿Quién dijo que aprender historia no podía incluir chistes de suegras medievales?</p>
+                    </div>
+                </div>
+
+                <!-- Botón para seleccionar el plan -->
+                <!-- Hrfe de compra ficticio porque no esta creada la pag. de compra -->
+                <a class="Main-card-button" href="compra.html" title="lo-quiero" target="_blank" rel="noopener noreferrer">¡Lo quiero!</a>
+            </li>
+
+            <li class="Main-card observe">
+                <!-- Para que haga el efecto de girar -->
+                <div class="Main-card-inner">
+                    <!-- Carta por delante -->
+                    <div class="Main-card-front">
+                        <!-- Imagen descriptiva del plan (optimizada) -->
+                        <picture>
+                            <source srcset="assets/cartas/finales/Rosalia.webp" type="image/webp">     
+                            <source srcset="assets/cartas/finales/Rosalia.jpg" type="image/jpg">
+                            <img class="Main-card-img" src="assets/cartas/finales/Rosalia.png" alt="Música">
+                        </picture>                 
+                    </div>
+
+                    <!-- Carta por detrás -->
+                    <div class="Main-card-back">
+                        <!-- Titulo del tipo de plan -->
+                        <h3 class="Main-tittle-h3">Concierto indie en una azotea secreta</h3> 
+
+                        <!-- Lista del texto descriptivo del tipo de plan -->
+                        <ul class="Main-card-text">
+                            <li class="Main-card-li"><span class="Main-span-strong">Duración:</span> 2-3h</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Precio:</span> 15-25€ (depende del postureo)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Personas:</span> entre 2 y los que quepan sin tirar una copa</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Ambiente:</span>  gafapasta pero con flow</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Extras:</span> vistas, cerveza artesanal, y algún influencer con bigote irónico</li>
+                        </ul>
+
+                        <p class="Main-card-p">Si no te sabes las letras, finge que estás emocionado por la armonía tonal (nadie sabe qué significa eso, pero funciona).</p>
+                    </div>
+                </div>
+
+                <!-- Botón para seleccionar el plan -->
+                <!-- Hrfe de compra ficticio porque no esta creada la pag. de compra -->
+                <a class="Main-card-button" href="compra.html" title="lo-quiero" target="_blank" rel="noopener noreferrer">¡Lo quiero!</a>
+            </li>
+
+            <li class="Main-card observe">
+                <!-- Para que haga el efecto de girar -->
+                <div class="Main-card-inner">
+                    <!-- Carta por delante -->
+                    <div class="Main-card-front">
+                        <!-- Imagen descriptiva del plan (optimizada) -->
+                        <picture>
+                            <source srcset="assets/cartas/finales/Chicote.webp" type="image/webp">    
+                            <source srcset="assets/cartas/finales/Chicote.jpg" type="image/jpg">
+                            <img class="Main-card-img" src="assets/cartas/finales/Chicote.png" alt="Gastronomía">
+                        </picture>                 
+                    </div>
+
+                    <!-- Carta por detrás -->
+                    <div class="Main-card-back">
+                        <!-- Titulo del tipo de plan -->
+                        <h3 class="Main-tittle-h3">Taller de cocina fusión con vino (mucho vino)</h3> 
+
+                        <!-- Lista del texto descriptivo del tipo de plan -->
+                        <ul class="Main-card-text">
+                            <li class="Main-card-li"><span class="Main-span-strong">Duración:</span> 3h (2 cocinando, 1 presumiendo)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Precio:</span> 35-50€</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Personas:</span> ideal 2-8 (más, y acabáis peleando por la última cucharilla)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Nivel chef:</span>  no hace falta saber cortar cebolla sin llorar</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Extras:</span> lo que cocines te lo zampas (con suerte sin intoxicación)</li>
+                        </ul>
+
+                        <p class="Main-card-p">¿Resultado? Una cena que parece hecha por Dabiz Muñoz… si Dabiz Muñoz tuviera una mala noche.</p>
+                    </div>
+                </div>
+
+                <!-- Botón para seleccionar el plan -->
+                <!-- Hrfe de compra ficticio porque no esta creada la pag. de compra -->
+                <a class="Main-card-button" href="compra.html" title="lo-quiero"  target="_blank" rel="noopener noreferrer">¡Lo quiero!</a>
+            </li>
+
+            <li class="Main-card observe">
+                <!-- Para que haga el efecto de girar -->
+                <div class="Main-card-inner">
+                    <!-- Carta por delante -->
+                    <div class="Main-card-front">
+                        <!-- Imagen descriptiva del plan (optimizada) -->
+                        <picture>
+                            <source srcset="assets/cartas/finales/Frank.webp" type="image/webp">     
+                            <source srcset="assets/cartas/finales/Frank.jpg" type="image/jpg">
+                            <img class="Main-card-img" src="assets/cartas/finales/Frank.png" alt="Aventura">
+                        </picture>                 
+                    </div>
+
+                    <!-- Carta por detrás -->
+                    <div class="Main-card-back">
+                        <!-- Titulo del tipo de plan -->
+                        <h3 class="Main-tittle-h3">Barranquismo en la sierra de Guara</h3> 
+
+                        <!-- Lista del texto descriptivo del tipo de plan -->
+                        <ul class="Main-card-text">
+                            <li class="Main-card-li"><span class="Main-span-strong">Duración:</span> 4-5h</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Precio:</span> desde 40€</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Personas:</span> ideal 4-6 (si vais más, ya sois un comando SEAL)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Forma física:</span> tipo Fernando Alonso esquivando a Stroll</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Extras:</span> Casco incluido (no te hagas el valiente, no eres Thor)</li>
+                        </ul>
+
+                        <p class="Main-card-p">Si no gritas "¡barranco va!" no cuenta como descenso. Cuidadín con las piedras, que no son de peluche.</p>
+                    </div>
+                </div>
+
+                <!-- Botón para seleccionar el plan -->
+                <!-- Hrfe de compra ficticio porque no esta creada la pag. de compra -->
+                <a class="Main-card-button" href="compra.html" title="lo-quiero"  target="_blank" rel="noopener noreferrer">¡Lo quiero!</a>
+            </li>
+
+            <li class="Main-card observe">
+                <!-- Para que haga el efecto de girar -->
+                <div class="Main-card-inner">
+                    <!-- Carta por delante -->
+                    <div class="Main-card-front">
+                        <!-- Imagen descriptiva del plan (optimizada) -->
+                        <picture>
+                            <source srcset="assets/cartas/finales/Ibai.webp" type="image/webp">  
+                            <source srcset="assets/cartas/finales/Ibai.jpg" type="image/jpg">
+                            <img class="Main-card-img" src="assets/cartas/finales/Ibai.png" alt="Chill">
+                        </picture>                 
+                    </div>
+
+                    <!-- Carta por detrás -->
+                    <div class="Main-card-back">
+                        <!-- Titulo del tipo de plan -->
+                        <h3 class="Main-tittle-h3">Baños árabes con masaje relajante</h3> 
+
+                        <!-- Lista del texto descriptivo del tipo de plan -->
+                        <ul class="Main-card-text">
+                            <li class="Main-card-li"><span class="Main-span-strong">Duración:</span> 1.5-2h</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Precio:</span> desde 30€</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Personas:</span> 1-4 (si sois más, es spa o comunión)</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Nivel de paz interior:</span>   Dalai Lama tras un gintonic</li>
+                            <li class="Main-card-li"><span class="Main-span-strong">Extras:</span> té, incienso y muchas ganas de no volver al curro</li>
+                        </ul>
+
+                        <p class="Main-card-p">Saldrás más blandit@ que las croquetas de tu abuela. Pero con más clase.</p>
+                    </div>
+                </div>
+
+                <!-- Botón para seleccionar el plan -->
+                <!-- Hrfe de compra ficticio porque no esta creada la pag. de compra -->
+                <a class="Main-card-button" href="compra.html" title="lo-quiero"  target="_blank" rel="noopener noreferrer">¡Lo quiero!</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <!-- Sección para recopilar preguntas frecuentes -->
+    <section class="Main-FAQ" id="FAQ">
+
+        <!-- Titulo introductorio -->
+        <div class="Main-intro">
+            <h2 class="Main-tittle-h2 Main-tittle-h2--FAQ observe">Preguntas frecuentes (FAQ)</h2>
+            <p class="Main-tittle-p Main-tittle-p--FAQ observe">¿Tienes dudas? Aquí tienes las respuestas a las preguntas más frecuentes que nos hacen nuestros usuarios.</p>
+        </div>
+        
+        <!-- Acordeón para preguntas frecuentes -->
+        <div class="Main-acordeon">
+            <div class="Main-bloque observe">
+                <h3 class="Main-pregunta">¿Tengo que ser un ninja para hacer el plan de AVENTURA?</h3>
+                <p class="Main-respuesta">Nah, con que sepas distinguir tu pie derecho del izquierdo, vas bien. Pero si tu idea de deporte es abrir la nevera rápido, igual empieza por CULTURA.</p>
+            </div>
+            <div class="Main-bloque observe">
+                <h3 class="Main-pregunta">¿Y si voy solo/a a algún plan?</h3>
+                <p class="Main-respuesta">No pasa nada, esto no es una boda. Todos los planes aceptan almas libres. Algunos incluso se disfrutan más sin tener que esperar a que tu colega “llegue en 5”.</p>
+            </div>
+            <div class="Main-bloque observe">
+                <h3 class="Main-pregunta">¿Puedo regalar uno de estos planes?</h3>
+                <p class="Main-respuesta">Claro. ¿Qué mejor regalo que una experiencia que no se pueda devolver en Amazon? Hay opción de bono regalo, y no, no caduca en 24h como tu motivación de lunes.</p>
+            </div>
+            <div class="Main-bloque observe">
+                <h3 class="Main-pregunta">¿Qué pasa si llueve, hay una huelga o Mercurio está retrógrado?</h3>
+                <p class="Main-respuesta">Te avisamos con tiempo si se cancela y te damos opciones. Si tú decides no venir por alineación planetaria, háblalo con tu terapeuta y luego nos escribes.</p>
+            </div>
+            <div class="Main-bloque observe">
+                <h3 class="Main-pregunta">¿Qué tengo que llevar?</h3>
+                <p class="Main-respuesta">En cada carta te lo ponemos clarito. Si hay que llevar bañador, lo decimos. Si hay que llevar actitud, también. Spoiler: en CHILL, deja el estrés en casa.</p>
+            </div>
+            <div class="Main-bloque observe">
+                <h3 class="Main-pregunta">¿Puedo hacer varios planes en un día?</h3>
+                <p class="Main-respuesta">Tú puedes hacer lo que quieras, campeón. Pero pasar de un concierto indie a un taller de cocina y luego barranquismo... igual explotas. Respira, y deja alguno para otro finde.</p>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+<!-- Pie de página -->
+<footer class="Footer">
+
+    <div class="Footer-column-left">
+
+        <!-- Logo de la pag. web -->
+        <h2 class="Footer-logo">Plan on time</h2>
+
+        <!-- Formulario para suscripción a planes exclusivos -->
+        <div class="Footer-subscription">
+            <form action="subscribe.php" method="POST" class="Footer-form">
+                <label for="email" class="Footer-form-label">Introduce tu correo para no perderte planes exclusivos</label>
+                <input type="email" id="email" name="email" class="Footer-form-input" placeholder="estoyPerdido@gmail.com" required>
+                <button type="submit" class="Footer-form-button">Suscribirse</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="Footer-column-right">
+
+        <!-- Lista de las redes sociales (solo lleva a la pag. de la RRSS porque no exite ninguna RRSS de Plan on Time) -->
+        <div class="Footer-RRSS">
+            <ul class="Footer-ul Footer-ul--RRSS">
+                <li class="Footer-li">
+                    <a href="https://www.instagram.com/" title="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="Footer-li">
+                    <a href="https://www.facebook.com/" title="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="Footer-li">
+                    <a href="https://twitter.com/" title="Twitter" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="Footer-li">
+                    <a href="https://www.youtube.com/" title="Youtube" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+       
+        <div class="Footer-legal">
+            <!-- Lista de enlaces legales (no están creados los html de los enlaces legales) -->
+            <ul class="Footer-ul Footer-ul--legal">
+                <li class="Footer-li">
+                    <a href="legal/aviso-legal.html" title="Aviso-legal" target="_blank" rel="noopener noreferrer">Aviso Legal</a>
+                </li>
+                <li class="Footer-li">
+                    <a href="legal/politica-privacidad.html" title="politica-privacidad" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>
+                </li>
+                <li class="Footer-li">
+                    <a href="legal/terminos-condiciones.html" title="terminos-condiciones" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
+                </li>
+            </ul>
+             <!-- Párrafo de copy -->
+            <div class="Footer-copy">
+                <p>© 2025 Plan On Time. Todos los derechos reservados.</p>
+            </div>
+        </div>
+
+    </div>
+    
+</footer>
+    
+</body>
+</html>
